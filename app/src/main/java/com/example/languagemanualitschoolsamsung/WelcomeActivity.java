@@ -1,10 +1,12 @@
 package com.example.languagemanualitschoolsamsung;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class WelcomeActivity extends AppCompatActivity {
     private Button signUpButton;
@@ -22,6 +24,7 @@ public class WelcomeActivity extends AppCompatActivity {
         signInTextView = findViewById(R.id.sign_in_text_welcome);
 
         signUpButton.setOnClickListener(v -> {
+            startActivity(new Intent(this, SignUpActivity.class));
             // TODO добавить переход на экран "SignUp"
         });
         signInTextView.setOnClickListener(v -> {

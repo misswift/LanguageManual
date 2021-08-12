@@ -1,5 +1,6 @@
 package com.example.languagemanualitschoolsamsung;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.internal.operators.observable.ObservableCreate;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -55,7 +57,15 @@ public class SignUpActivity extends AppCompatActivity {
 
             User user = new User(email, name, password);
             if (!users.contains(user)) {
-                App.instance.getAppDatabase().userDao().saveUser(user);
+                ObservableCreate.empty()
+                        .observeOn(Schedulers.io())
+                        .subscribe(o -> {
+                            App.instance.getAppDatabase().userDao().saveUser(user);
+                        });
+
+                Intent intent = new Intent(this, HelloActivity.class);
+                intent.putExtra("name", name);
+                startActivity(intent);
             } else {
                 // TODO Error когда такой пользователь уже есть в БД
             }
