@@ -1,6 +1,7 @@
 package com.example.languagemanualitschoolsamsung;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -8,6 +9,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.languagemanualitschoolsamsung.database.User;
+import com.example.languagemanualitschoolsamsung.main.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +59,9 @@ public class SignInActivity extends AppCompatActivity {
             if (user != null
                     && user.getEmail().equals(email)
                     && user.getPassword().equals(password)) {
-                // TODO открыть main экран
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
     }

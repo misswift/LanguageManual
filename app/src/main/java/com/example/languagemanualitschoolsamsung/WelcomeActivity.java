@@ -28,7 +28,7 @@ public class WelcomeActivity extends AppCompatActivity {
             // TODO добавить переход на экран "SignUp"
         });
         signInTextView.setOnClickListener(v -> {
-            // TODO добавить переход на экран "SignIn"
+            startActivity(new Intent(this, SignInActivity.class));
         });
     }
 }
