@@ -1,10 +1,6 @@
-package com.example.guidanceitschool.models;
-
+package com.example.languagemanualitschoolsamsung.models;
 
 import com.example.languagemanualitschoolsamsung.R;
-import com.example.languagemanualitschoolsamsung.models.PracticalTopic;
-import com.example.languagemanualitschoolsamsung.models.TheoreticalTopic;
-import com.example.languagemanualitschoolsamsung.models.Topic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,14 +37,9 @@ public class Lesson {
             List<Topic> topics = new ArrayList();
 
             topics.add(new TheoreticalTopic("bla bla bla"));
-            topics.add(new TheoreticalTopic("мм"));
-            topics.add(new TheoreticalTopic("bмм"));
-            topics.add(new TheoreticalTopic("ммм"));
-            topics.add(new TheoreticalTopic("уу"));
-            topics.add(new TheoreticalTopic("уу"));
-            topics.add(new TheoreticalTopic("bla bla bla"));
-            topics.add(new TheoreticalTopic("bla bla bla"));
-            topics.add(new TheoreticalTopic("bla bla bla"));
+            topics.add(new TheoreticalTopic("gggggg"));
+            topics.add(new TheoreticalTopic("bhhhh"));
+            topics.add(new TheoreticalTopic("ddddd"));
 
             List<String> questions = new ArrayList();
             questions.add("Question - " + i);

@@ -20,6 +20,7 @@ public class HelloActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         name = getIntent().getStringExtra("name");
         initViews();
     }
