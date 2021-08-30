@@ -96,7 +96,7 @@ public class Lesson {
         questions6.add("Question - " + 1);
         questions6.add("Question - " + 2);
         topics6.add(new PracticalTopic(questions6, 3));
-        result.add(new Lesson(0, R.drawable.icons_8, "Циклы (Loops) Foreach", topics6));
+        result.add(new Lesson(0, R.drawable.icons_8, "Циклы (Loops)Do..While и Foreach", topics6));
 
         List<Topic> topics7 = new ArrayList();
         topics7.add(new TheoreticalTopic(R.string.topic_8));
@@ -115,16 +115,6 @@ public class Lesson {
         questions8.add("Question - " + 2);
         topics8.add(new PracticalTopic(questions8, 3));
         result.add(new Lesson(0, R.drawable.icons_10, "Перегрузка методов", topics8));
-
-        List<Topic> topics9 = new ArrayList();
-        topics9.add(new TheoreticalTopic(R.string.topic_10));
-        List<String> questions9 = new ArrayList();
-        questions9.add("Question - ");
-        questions9.add("Question - " + 1);
-        questions9.add("Question - " + 2);
-        topics9.add(new PracticalTopic(questions9, 3));
-        result.add(new Lesson(0, R.drawable.icons_2, "Переопределение методов", topics9));
-
 
         return result;
     }
