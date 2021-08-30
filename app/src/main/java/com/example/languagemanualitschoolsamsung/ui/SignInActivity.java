@@ -1,4 +1,4 @@
-package com.example.languagemanualitschoolsamsung;
+package com.example.languagemanualitschoolsamsung.ui;
 
 
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.languagemanualitschoolsamsung.App;
+import com.example.languagemanualitschoolsamsung.R;
 import com.example.languagemanualitschoolsamsung.database.User;
 import com.example.languagemanualitschoolsamsung.main.MainActivity;
 

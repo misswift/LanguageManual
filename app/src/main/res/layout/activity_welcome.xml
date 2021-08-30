@@ -4,27 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WelcomeActivity">
+    tools:context=".ui.WelcomeActivity">
 
-  <TextView
-      android:id="@+id/welcome_text"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
-      android:text="Добро пожаловать"
-      android:textColor="@android:color/black"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Добро пожаловать"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-  <TextView
-      android:id="@+id/welcome_use_psychology_text"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginHorizontal="58dp"
-      android:layout_marginTop="20dp"
-      android:gravity="center"
-      android:text="Мы используем настоящую психологию, чтобы помочь Вам учиться более эффективно!"
+    <TextView
+        android:id="@+id/welcome_use_psychology_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="58dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Мы используем настоящую психологию, чтобы помочь Вам учиться более эффективно!"
       android:textColor="@android:color/black"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="18dp"
-      android:src="@drawable/ic_launcher_background"
+      android:src="@drawable/ic_samsung_school_logo"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/welcome_use_psychology_text" />
@@ -50,6 +50,7 @@
       android:layout_marginBottom="80dp"
       android:text="Создать Новый Аккаунт"
       android:textAllCaps="false"
+      app:layout_constraintTop_toBottomOf="@+id/imageView"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent" />

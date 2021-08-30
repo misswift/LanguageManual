@@ -1,4 +1,4 @@
-package com.example.languagemanualitschoolsamsung;
+package com.example.languagemanualitschoolsamsung.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.languagemanualitschoolsamsung.App;
+import com.example.languagemanualitschoolsamsung.R;
 import com.example.languagemanualitschoolsamsung.database.User;
 
 import java.util.ArrayList;
@@ -59,6 +61,8 @@ public class SignUpActivity extends AppCompatActivity {
             if (!users.contains(user)) {
                 Completable.fromAction(() -> {
                     App.instance.getAppDatabase().userDao().saveUser(user);
+                    App.instance.getAuthPrefs().setEmail(user.getEmail());
+                    App.instance.getAuthPrefs().setPassword(user.getPassword());
                 })
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
@@ -68,7 +72,7 @@ public class SignUpActivity extends AppCompatActivity {
                             startActivity(intent);
                         });
             } else {
-                // TODO Error когда такой пользователь уже есть в БД
+                //Toast.makeText(getCon, "Пользователь с таким именем уже существует", Toast.LENGTH_LONG).show();
             }
         });
     }
