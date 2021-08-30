@@ -16,8 +16,8 @@ import com.example.languagemanualitschoolsamsung.models.Lesson;
 
 import java.util.List;
 
-public class LessonsAdapter extends RecyclerView.Adapter<LessonsAdapter.LessonViewHolder> {
 
+public class LessonsAdapter extends RecyclerView.Adapter<LessonsAdapter.LessonViewHolder> {
 
     private OnItemClickListener onItemClickListener;
     private List<Lesson> currentList;

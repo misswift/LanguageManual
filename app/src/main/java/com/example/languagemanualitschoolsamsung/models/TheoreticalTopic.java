@@ -2,13 +2,14 @@ package com.example.languagemanualitschoolsamsung.models;
 
 public class TheoreticalTopic extends Topic {
 
-    private String text;
+    private int text;
 
-    public TheoreticalTopic(String text) {
+
+    public TheoreticalTopic(int text) {
         this.text = text;
     }
 
-    public String getText() {
+    public int getText() {
         return text;
     }
 }

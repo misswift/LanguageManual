@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,12 +16,16 @@ import com.example.languagemanualitschoolsamsung.R;
 import com.example.languagemanualitschoolsamsung.models.PracticalTopic;
 import com.google.android.material.button.MaterialButton;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PracticalTopicFragment extends Fragment {
 
     private PracticalTopic practicalTopic;
 
     private RadioGroup questionsRadioGroup;
     private MaterialButton checkButton;
+    private List<Integer> radioButtonsID = new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,10 +47,23 @@ public class PracticalTopicFragment extends Fragment {
         for (int i = 0; i < practicalTopic.getQuestions().size(); i++) {
             String question = practicalTopic.getQuestions().get(i);
             RadioButton radioButton = new RadioButton(getContext());
+            radioButton.setId(View.generateViewId());
+            radioButtonsID.add(radioButton.getId());
             radioButton.setText(question);
             questionsRadioGroup.addView(radioButton);
         }
 
         checkButton = view.findViewById(R.id.check_button);
+        checkButton.setOnClickListener(v -> {
+            for (int i = 0; i < radioButtonsID.size(); i++) {
+                if (questionsRadioGroup.getCheckedRadioButtonId() == radioButtonsID.get(i)) {
+                    if (i == practicalTopic.getRightQuestion()) {
+                        Toast.makeText(getContext(), "Правильно", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getContext(), "Ошибка", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
     }
 }
