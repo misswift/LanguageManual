@@ -9,7 +9,7 @@ import java.util.Objects;
 
 @Entity(tableName = "users")
 public class User {
-
+    // реализация таблицы базы данных
     @PrimaryKey()
     @ColumnInfo(name = "email")
     @NonNull

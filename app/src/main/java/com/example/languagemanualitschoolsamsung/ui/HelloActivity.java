@@ -25,13 +25,14 @@ public class HelloActivity extends AppCompatActivity {
         name = getIntent().getStringExtra("name");
         initViews();
     }
-
+    // инициализация переменных
     private void initViews() {
         setContentView(R.layout.activity_hello);
         helloTextView = findViewById(R.id.hello_text);
         forwardButton = findViewById(R.id.forward_button_hello);
 
         helloTextView.setText("Добро пожаловать, " + name + "!");
+        // определение перехода
         forwardButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

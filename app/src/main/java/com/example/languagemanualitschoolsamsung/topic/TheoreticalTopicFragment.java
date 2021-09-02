@@ -34,7 +34,7 @@ public class TheoreticalTopicFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        textTheoretical = view.findViewById(R.id.text_theoretical_topic);
+        textTheoretical = view.findViewById(R.id.text_topic);
         textTheoretical.setText(theoreticalTopic.getText());
     }
 }

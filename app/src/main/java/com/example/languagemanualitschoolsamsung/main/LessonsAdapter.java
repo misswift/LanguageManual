@@ -31,9 +31,12 @@ public class LessonsAdapter extends RecyclerView.Adapter<LessonsAdapter.LessonVi
         notifyDataSetChanged();
     }
 
+    //методы RecyclerView
+
     @NonNull
     @Override
     public LessonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // генерация класса из layout item_lesson
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_lesson, parent, false);
         return new LessonViewHolder(itemView);
@@ -41,11 +44,13 @@ public class LessonsAdapter extends RecyclerView.Adapter<LessonsAdapter.LessonVi
 
     @Override
     public void onBindViewHolder(@NonNull LessonViewHolder holder, int position) {
+        // определение ячейки
         holder.bind(currentList.get(position));
     }
 
     @Override
     public int getItemCount() {
+        // определение количества полей сипска в зависимости от массива данных
         return currentList.size();
     }
 

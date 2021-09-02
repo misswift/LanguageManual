@@ -11,6 +11,8 @@ import io.reactivex.rxjava3.core.Single;
 @Dao
 public interface UserDao {
 
+    // реализация запроса
+
     @Query("SELECT * FROM users")
     public Single<List<User>> getUsers();
 

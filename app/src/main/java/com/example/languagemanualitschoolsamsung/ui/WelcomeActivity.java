@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.languagemanualitschoolsamsung.App;
 import com.example.languagemanualitschoolsamsung.R;
+import com.example.languagemanualitschoolsamsung.main.MainActivity;
 
 public class WelcomeActivity extends AppCompatActivity {
     private Button signUpButton;
@@ -20,6 +21,11 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         String email = App.instance.getAuthPrefs().getEmail();
         String password = App.instance.getAuthPrefs().getPassword();
+        //условие перехода при наличии сохраненной регистрации
+        if (!email.isEmpty() && !password.isEmpty()){
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
 
         initViews();
     }
@@ -31,10 +37,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
         signUpButton.setOnClickListener(v -> {
             startActivity(new Intent(this, SignUpActivity.class));
-            // TODO добавить переход на экран "SignUp"
+
         });
-        signInTextView.setOnClickListener(v -> {
-            startActivity(new Intent(this, SignInActivity.class));
-        });
+        signInTextView.setOnClickListener(v -> startActivity(new Intent(this, SignInActivity.class)));
     }
 }

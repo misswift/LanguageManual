@@ -72,7 +72,7 @@ public class SignUpActivity extends AppCompatActivity {
                             startActivity(intent);
                         });
             } else {
-                //Toast.makeText(getCon, "Пользователь с таким именем уже существует", Toast.LENGTH_LONG).show();
+                //TO DO если пользователь уже зарег
             }
         });
     }
